@@ -11,6 +11,7 @@ function Search() {
       placeholder="Search TonyMac129"
       value={search}
       setValue={setSearch}
+      width={200}
     />
   );
 }

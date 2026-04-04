@@ -1,5 +1,4 @@
 import Search from "./Search";
-import Btn from "../ui/Btn";
 import Link from "next/link";
 
 const navLinkStyles =
@@ -7,9 +6,9 @@ const navLinkStyles =
 
 function Nav() {
   return (
-    <nav className="border-b-2 border-b-zinc-800 px-40 py-3">
+    <nav className="border-b-2 border-b-zinc-800 px-50 py-4">
       <div className="w-full relative flex justify-center items-center">
-        <Link href="/" className="text-white text-lg font-bold absolute left-0">
+        <Link href="/" className="text-white text-xl font-bold absolute left-0">
           TonyMac129
         </Link>
         <div className="flex gap-x-3">
@@ -26,9 +25,8 @@ function Nav() {
             About
           </Link>
         </div>
-        <div className="flex gap-x-3 absolute right-0">
+        <div className="absolute right-0">
           <Search />
-          <Btn text="Sign in" />
         </div>
       </div>
     </nav>
