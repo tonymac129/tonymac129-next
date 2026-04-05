@@ -3,6 +3,7 @@ import Image from "next/image";
 async function Discord() {
   const res = await fetch(
     "https://api.lanyard.rest/v1/users/1068681362590146611",
+    { cache: "no-store" },
   );
   const data = await res.json();
   const user = data.data;
@@ -10,8 +11,6 @@ async function Discord() {
   const imageUrl = activity?.assets?.large_image
     ? `https://cdn.discordapp.com/app-assets/383226320970055681/${activity?.assets.large_image}.png`
     : "/default-vscode.png";
-
-  console.log(user);
 
   return (
     <div className="w-full rounded-lg border-2 border-zinc-800 px-4 py-2 flex flex-col gap-y-2">
