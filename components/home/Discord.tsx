@@ -1,4 +1,6 @@
+import type { UserType } from "@/types/activity";
 import Image from "next/image";
+import Activity from "./Activity";
 
 async function Discord() {
   const res = await fetch(
@@ -6,15 +8,12 @@ async function Discord() {
     { cache: "no-store" },
   );
   const data = await res.json();
-  const user = data.data;
-  const activity = user.activities[1];
-  const imageUrl = activity?.assets?.large_image
-    ? `https://cdn.discordapp.com/app-assets/383226320970055681/${activity?.assets.large_image}.png`
-    : "/default-vscode.png";
+  const user: UserType = data.data;
 
   return (
-    <div className="w-full rounded-lg border-2 border-zinc-800 px-4 py-2 flex flex-col gap-y-2">
-      <div className="flex gap-x-5">
+    <div className="w-full flex flex-3 flex-col gap-y-5">
+      <h2 className="text-white text-xl font-bold">Discord status</h2>
+      <div className="flex gap-x-5 items-center">
         <Image
           src="https://api.lanyard.rest/1068681362590146611.png"
           alt="Discord avatar"
@@ -22,10 +21,26 @@ async function Discord() {
           height={80}
           className="border-2 border-zinc-800 rounded-full"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-y-0.5">
           <h2 className="text-zinc-300 font-bold text-lg">
             {user.discord_user.display_name}
           </h2>
+          <div className="flex gap-x-2 text-zinc-400 text-xs items-center">
+            <div
+              className="text-zinc-400 text-xs hover:bg-zinc-900 transition-colors duration-300 cursor-pointer rounded-lg w-fit
+            px-1 py-0.5 flex items-center gap-x-1 border border-zinc-800"
+              title="Frieren"
+            >
+              <Image
+                src={`https://cdn.discordapp.com/guild-tag-badges/${user.discord_user.primary_guild.identity_guild_id}/${user.discord_user.primary_guild.badge}`}
+                alt="Server tag"
+                width={15}
+                height={15}
+              />
+              {user.discord_user.primary_guild.tag}
+            </div>
+            •<span>{user.discord_user.username}</span>•<span>he/him</span>
+          </div>
           <div className="text-zinc-300 font-bold flex items-center text-sm gap-x-2">
             <div
               className={`border-2 rounded-full w-2 h-2
@@ -38,25 +53,12 @@ async function Discord() {
           </div>
         </div>
       </div>
-      {activity && (
-        <div className="flex items-center gap-x-4 px-4 py-2 rounded-lg bg-zinc-900 border-2 border-zinc-800">
-          <Image
-            src={imageUrl}
-            alt={activity.assets?.large_text}
-            width={50}
-            height={50}
-            className="rounded-lg object-cover"
-          />
-          <div className="flex flex-col">
-            <h3 className="text-white font-bold text-sm">{activity.name}</h3>
-            <p className="text-zinc-300 text-xs">
-              {activity.details || "Idling"}
-            </p>
-            <p className="text-zinc-400 text-xs">
-              {activity.state || "No workspace"}
-            </p>
-          </div>
-        </div>
+      {user.activities.length == 1 ? (
+        <Activity activity={user.activities[0]} />
+      ) : (
+        user.activities
+          .slice(1)
+          .map((activity) => <Activity key={activity.id} activity={activity} />)
       )}
     </div>
   );

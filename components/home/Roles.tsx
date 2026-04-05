@@ -22,7 +22,7 @@ function Roles() {
           </div>
         ))}
       </div>
-      <div className="flex gap-x-3">
+      <div className="flex gap-x-2">
         <AnimatePresence mode="popLayout">
           {roles
             .find((role) => role.id === selected)

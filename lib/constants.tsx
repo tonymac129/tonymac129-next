@@ -146,11 +146,11 @@ export const roles: RoleInterface[] = [
         color: "group-hover:text-blue-500",
         link: "archlinux.org",
       },
-      {
-        name: "Sysadmin understudy",
-        icon: <FaServer size={35} />,
-        link: "sysadmins.tjhsst.edu/understudy/",
-      },
+      // {
+      //   name: "Sysadmin understudy",
+      //   icon: <FaServer size={35} />,
+      //   link: "sysadmins.tjhsst.edu/understudy/",
+      // },
     ],
   },
   {

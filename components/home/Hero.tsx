@@ -18,10 +18,7 @@ function Hero() {
         </p>
         <Roles />
       </div>
-      <div className="flex-3 flex flex-col gap-y-5">
-        <h2 className="text-white text-xl font-bold">Discord status</h2>
-        <Discord />
-      </div>
+      <Discord />
     </div>
   );
 }
