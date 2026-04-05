@@ -1,10 +1,10 @@
 import Greeting from "./Greeting";
 import Roles from "./Roles";
-import Image from "next/image";
+import Discord from "./Discord";
 
 function Hero() {
   return (
-    <div className="flex gap-x-20 flex-1 py-15">
+    <div className="flex gap-x-20 flex-1 py-15 items-center">
       <div className="flex flex-col gap-y-7 flex-5">
         <div className="flex flex-col gap-y-3">
           <Greeting />
@@ -18,14 +18,9 @@ function Hero() {
         </p>
         <Roles />
       </div>
-      <div className="flex-2">
-        <Image
-          src="/logo.png"
-          alt="TonyMac129 Logo"
-          width={230}
-          height={230}
-          className="rounded-full border-2 border-zinc-800"
-        />
+      <div className="flex-3 flex flex-col gap-y-5">
+        <h2 className="text-white text-xl font-bold">Discord status</h2>
+        <Discord />
       </div>
     </div>
   );
