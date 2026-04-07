@@ -1,22 +1,44 @@
 "use client";
 
+import { useRef } from "react";
+import { FaXmark } from "react-icons/fa6";
+
 type InputProps = {
   placeholder: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   width?: number;
+  className?: string;
 };
 
-function Input({ placeholder, value, setValue, width }: InputProps) {
+function Input({ placeholder, value, setValue, width, className }: InputProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function handleClear() {
+    setValue("");
+    inputRef.current?.focus();
+  }
+
   return (
-    <input
-      type="text"
-      style={{ width: width + "px" }}
-      className="bg-zinc-900 outline-none rounded-lg px-4 py-2 text-zinc-300"
-      placeholder={placeholder}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-    />
+    <div className="relative flex items-center text-zinc-300">
+      <input
+        type="text"
+        style={{ width: width + "px" }}
+        className={"bg-zinc-900 outline-none rounded-lg px-4 py-2 " + className}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        ref={inputRef}
+      />
+      {value.length > 0 && (
+        <FaXmark
+          onClick={handleClear}
+          className="absolute right-4 cursor-pointer"
+          title="Clear"
+          size={25}
+        />
+      )}
+    </div>
   );
 }
 
