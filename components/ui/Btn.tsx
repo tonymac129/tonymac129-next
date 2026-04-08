@@ -1,16 +1,32 @@
 "use client";
 
+import Link from "next/link";
+
 type BtnProps = {
   text: string;
   onclick?: () => void;
+  link?: string;
+  primary?: boolean;
 };
 
-function Btn({ text, onclick }: BtnProps) {
-  return (
-    <button
-      className="font-bold px-4 py-2 bg-white text-zinc-800 rounded-lg cursor-pointer hover:bg-zinc-300 transition-colors duration-300"
-      onClick={onclick}
+const btnStyles =
+  "bg-transparent font-bold px-4 py-2 border-2 text-zinc-300 border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 ";
+
+function Btn({ text, onclick, link, primary }: BtnProps) {
+  return link ? (
+    <Link
+      href={link}
+      className={
+        btnStyles +
+        (primary
+          ? "bg-white border-white! hover:bg-zinc-300 hover:border-zinc-300! text-zinc-800"
+          : "")
+      }
     >
+      {text}
+    </Link>
+  ) : (
+    <button className={btnStyles} onClick={onclick}>
       {text}
     </button>
   );

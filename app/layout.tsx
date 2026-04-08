@@ -10,7 +10,24 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Home | TonyMac129",
-  description: "Tuff app",
+  description:
+    "Hey, I'm TonyMac129 — fullstack web developer studying STEM and computer science at TJHSST. Find my projects, skills, about, blog, contact info, and more here on my portfolio website!",
+  authors: [{ name: "TonyMac129", url: "https://tonymac.net" }],
+  openGraph: {
+    title: "Home | TonyMac129",
+    description:
+      "Hey, I'm TonyMac129 — fullstack web developer studying STEM and computer science at TJHSST. Find my projects, skills, about, blog, contact info, and more here on my portfolio website!",
+    url: "https://tonymac.net",
+    siteName: "TonyMac129",
+    images: [
+      {
+        url: "/logo.png",
+        width: 50,
+        height: 50,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
