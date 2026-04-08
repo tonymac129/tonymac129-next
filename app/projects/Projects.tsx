@@ -22,7 +22,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
         setValue={setSearch}
         className="text-lg w-120"
       />
-      <div className="flex flex-wrap justify-center gap-5 px-50">
+      <div className="flex flex-wrap justify-center gap-5 px-40">
         {displayedProjects.length > 0 ? (
           displayedProjects.map((project) => (
             <Project key={project.id} project={project} />
