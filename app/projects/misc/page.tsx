@@ -3,6 +3,10 @@ import Hero from "@/components/layout/Hero";
 import Link from "next/link";
 import Projects from "./Projects";
 
+const sortedMiscData = miscData.sort(
+  (a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime(),
+);
+
 function Page() {
   return (
     <div>
@@ -15,7 +19,7 @@ function Page() {
         </Link>
         !
       </Hero>
-      <Projects projects={miscData} />
+      <Projects projects={sortedMiscData} />
     </div>
   );
 }

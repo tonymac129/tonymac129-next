@@ -6,18 +6,71 @@ import {
   FaReact,
   FaJava,
 } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiExpress,
+  SiNodedotjs,
+  SiUnity,
+  SiAstro,
+} from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 export const projectData: ProjectType[] = [
   {
     id: 0,
-    name: "Waterbear Page",
+    name: "MacWeb",
     description:
-      "The basic webpage that started everything when I was first learning HTML, CSS, and JS.",
-    date: "Aug 2022",
-    link: "/projects/waterbear/Password.html",
-    tags: ["Learning"],
-    skills: [<FaHtml5 key={0} />, <FaCss3Alt key={1} />],
+      "MacWeb is an online platform I created to make digital life a bit easier and more enjoyable. It features MacVG, an online gaming hub focused on entertainment, and MacLearn, a platform used for learning web development. MacWeb also has other smaller apps like MacIdeas and MacTools for productivity and utilities, as well as the information hub MacBlog for updates, news, and info about MacWeb. I've been working on MacWeb's first app, the web dev learning platform MacLearn, since January 2023, and MacVG, the online gaming platform, since June 2023. I officially created and rebranded MacWeb as a collection of web apps and tools in October 2023 and its popularity has skyrocketed ever since. I started earning hundreds monthly from MacWeb in December 2024 thanks to ads, and I transitioned the entire platform to React in July 2025 (I basically remade the entire website and it wasn't easy). This is the project that I've spent the most time working on, so hopefully you'll enjoy what I created.",
+    image: "/demos/macweb.png",
+    link: "macweb.app",
+    repo: "Mac-Web",
+    date: "Oct 2023 - Now",
+    skills: [
+      <SiNextdotjs key={0} />,
+      <FaReact key={1} />,
+      <SiTypescript key={2} />,
+      <SiTailwindcss key={3} />,
+      <SiMongodb key={4} />,
+    ],
+    tags: ["Web App", "Fullstack"],
+  },
+  {
+    id: 1,
+    name: "Subtrack",
+    description:
+      "Initially I was just tired of having so many subscriptions and services that it was hard to remember all of them and stay on budget. I planned to make a quick React front-end only app for my personal use, but kept delaying it. During this period, I learned the framework Next.js as well as other modern technologies. This made me rethink the entire project, and this was the result: a completely full-stack web app that keeps track of all your subscriptions with 50+ different services and presets, renewal date reminders, subscription management features, account management features with AES-256 password encryption, spending/account analytics dashboard with Chart.js, guest mode, and an OAuth/credential account system that hashes user data and stores it in the backend database securely. This is my first actual complete full-stack app that I put a ton of effort into, totaling over 35 hours of development time.",
+    image:
+      "https://raw.githubusercontent.com/tonymac129/subtrack/refs/heads/main/banner.png",
+    link: "app-subtrack.vercel.app",
+    repo: "tonymac129/subtrack",
+    date: "Dec 2025 - Apr 2026",
+    skills: [
+      <SiNextdotjs key={0} />,
+      <FaReact key={1} />,
+      <SiTypescript key={2} />,
+      <SiTailwindcss key={3} />,
+      <SiMongodb key={4} />,
+    ],
+    tags: ["Web App", "Fullstack"],
+  },
+  {
+    id: 2,
+    name: "Lightning",
+    description:
+      "Since I first created MacWeb, I imagined an entire ecosystem of a bunch of different apps that could all integrate together (lol how naive I thought I could create all that myself) and every app can be called to do a certain task with a universal command bar. I soon realized there's no way to achieve this level of scale and the idea just became a dream. Until I got good with React and wanted to replace my old personal dashboard made with vanilla JS for the third time. I thought, why not make an extremely customizable dashboard with a ton of features and commands that act as shrotcuts to the web? Shortly after starting it, I discovered the event Summer of Making hosted by the absolutely amazing organization Hack Club that rewards teens with free prizes/tech/merch for coding and making cool stuff. This gave me a ton of motivation and I developed a lot of features and stacked 9 hours on the project in just a week. Lightning is still being developed and I hope to make more features in the future!",
+    image: "/demos/lightning.png",
+    link: "tonymac.net/lightning",
+    repo: "tonymac129/lightning",
+    date: "Aug 2025 - Sep 2025",
+    skills: [
+      <FaReact key={0} />,
+      <FaJsSquare key={1} />,
+      <FaCss3Alt key={2} />,
+    ],
+    tags: ["Web App", "SPA"],
   },
 ];
 
@@ -326,7 +379,7 @@ export const miscData: ProjectType[] = [
     ],
   },
   {
-    id: 50,
+    id: 500,
     name: "Announcement",
     description: "Announcement banner",
     date: "Jun 2023",
@@ -546,5 +599,473 @@ export const miscData: ProjectType[] = [
     tags: ["Learning", "School", "Math"],
     description:
       "Heart rate scientific paper is my first semester final group project for my freshman year's statistics math class.",
+  },
+  {
+    id: 4,
+    name: "Countdown",
+    description:
+      "A (not very accurate) simple countdown web app with JS Date() object, made using a YouTube tutorial.",
+    link: "/projects/countdown/index.html",
+    date: "Jan 2023",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 5,
+    name: "Calculator",
+    description: "An over-simplified and very limited calculator app.",
+    link: "/projects/calculator/index.html",
+    date: "Feb 2023",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Learning"],
+  },
+  {
+    id: 10,
+    name: "MacText",
+    description:
+      "A little text formatter using JS string manipulation with many options and features.",
+    link: "/projects/mactext/index.html",
+    date: "Oct 2023",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 12,
+    name: "TypeRacer Redesign",
+    description: "I gave the very outdated typing site a new fresh look.",
+    link: "/projects/typeracer/index.html",
+    date: "Nov 2023",
+    skills: [<FaHtml5 key={0} />, <FaCss3Alt key={1} />],
+    tags: ["Design"],
+  },
+  {
+    id: 15,
+    name: "Google Redesign",
+    description:
+      "I remade the tech giant's search home page to make it more intuitive and friendly.",
+    link: "/projects/google/index.html",
+    date: "Jan 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Design"],
+  },
+  {
+    id: 17,
+    name: "Snake Game",
+    description:
+      "I made a very simple version of the classic snake game with HTML5 canvas.",
+    link: "/projects/snake/index.html",
+    date: "Mar 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Game"],
+  },
+  {
+    id: 180,
+    name: "Weatherboard",
+    description:
+      "I built the classic beginner weather forecast project with OpenWeatherMap's API.",
+    link: "/projects/weatherboard/index.html",
+    date: "May 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 21,
+    name: "Amazon Redesign",
+    description:
+      "Everyone knows that Amazon is in need of a redesign make over.",
+    link: "/projects/amazon/index.html",
+    date: "Jul 2024",
+    skills: [<FaHtml5 key={0} />, <FaCss3Alt key={1} />],
+    tags: ["Design"],
+  },
+  {
+    id: 22,
+    name: "Guess the State: Blind",
+    description:
+      "Can you name all 50 states? Test your US geography skills with this interactive game!",
+    link: "/projects/guess-state/index.html",
+    date: "Aug 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Game"],
+  },
+  {
+    id: 23,
+    name: "Tic-Tac-Toe",
+    description: "A simple two player online tic-tac-toe game.",
+    link: "/projects/tic-tac-toe/index.html",
+    date: "Aug 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Game"],
+  },
+  {
+    id: 26,
+    name: "Caesar Cipher Encoder",
+    description: "I made a tool that encodes messages using Caesar Cipher.",
+    link: "/projects/caesar-encoder/index.html",
+    date: "Oct 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 27,
+    name: "Caesar Cipher Decoder",
+    description:
+      "I made a tool that decodes messages encrypted with Caesar Cipher.",
+    link: "/projects/caesar-decoder/index.html",
+    date: "Oct 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 28,
+    name: "Vigenere Cipher Tool",
+    description: "This app can encrypt and decrypt Vigenere Ciphers.",
+    link: "/projects/vigenere-cipher/index.html",
+    date: "Nov 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 30,
+    name: "Memoji",
+    description:
+      "In this cool little game, you have to memorize the cards and match the same emojis!",
+    link: "/projects/memoji/index.html",
+    date: "Dec 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Game"],
+  },
+  {
+    id: 31,
+    name: "Homeboard",
+    description:
+      "A personalized and customizable new tab dashboard with different widgets. (Full demo recommended)",
+    link: "/projects/homeboard/index.html",
+    date: "Dec 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 32,
+    name: "SeenIt",
+    description: "Simple movies and TV shows tracking app.",
+    link: "https://seenitapp.netlify.app",
+    date: "Jan 2025",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 36,
+    name: "Money Tracker",
+    description: "Simple app that tracks your transactions and balance.",
+    link: "https://tonymac129.github.io/money-tracker/",
+    date: "Feb 2025",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 38,
+    name: "Password Manager",
+    description: "App that manages your passwords and accounts.",
+    link: "/projects/password-manager/index.html",
+    date: "Mar 2025",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 39,
+    name: "Listly",
+    description:
+      "Powerful and lightweight to-do app with many advanced features.",
+    link: "https://tonymac129.github.io/listly/",
+    date: "Apr 2025",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 40,
+    name: "Bored",
+    description: "A goofy interactive webpage made to cure your boredom.",
+    link: "/projects/bored/index.html",
+    date: "Apr 2025",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Game"],
+  },
+  {
+    id: 43,
+    name: "Stolen Car",
+    description:
+      "I made a website for my friends' film production studio, Stolen Car Productions, to display their films and related information.",
+    link: "https://stolencar.github.io",
+    date: "Jun 2025",
+    skills: [<FaReact key={0} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 44,
+    name: "Daily Log",
+    description:
+      "A daily activity tracker with lots of features so it doesn't feel like your wasting everyday without accomplishing anything.",
+    link: "https://tonymac129.github.io/daily-log/",
+    date: "Jul 2025",
+    skills: [<FaReact key={0} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 45,
+    name: "Project Bellbot",
+    description:
+      "I made a website documenting an auto bell ringing robot for NVAECS programmed in Java that my friend made.",
+    link: "https://tonymac129.github.io/project-bellbot/",
+    date: "Aug 2025",
+    skills: [<FaReact key={0} />, <FaJava key={1} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 47,
+    name: "StemGames",
+    description:
+      "A popular discontinued game site for school and was basically a copy of MacVG but with different UI",
+    link: "https://tonymac129.github.io/stemgames/",
+    date: "Jan 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 48,
+    name: "Viberverse",
+    description:
+      "Another popular discontinued game site made for school with a lot of games and features.",
+    link: "https://viberverse.github.io/",
+    date: "Oct 2024",
+    skills: [
+      <FaHtml5 key={0} />,
+      <FaCss3Alt key={1} />,
+      <FaJsSquare key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 49,
+    name: "Thinkboard",
+    description:
+      "My first full stack app built with MERN where users can create and manage public notes!",
+    link: "https://thinkboard-y18u.onrender.com/",
+    date: "Oct 2025",
+    skills: [
+      <FaReact key={0} />,
+      <SiExpress key={1} />,
+      <SiNodedotjs key={2} />,
+      <SiMongodb key={3} />,
+    ],
+    tags: ["Learning", "Full Stack"],
+  },
+  {
+    id: 50,
+    name: "Brawlverse",
+    description:
+      "A Brawl Stars wiki with Brawler stats, info, builds, and more that was abandoned halfway :(",
+    link: "https://tonymac129.github.io/brawlverse/",
+    date: "Jan 2025",
+    skills: [<FaReact key={0} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 510,
+    name: "Christmas Countdown",
+    description:
+      "Pretty fun Christmas themed countdown with interactive stuff and particles.",
+    link: "https://tonymac129.github.io/christmas-countdown/",
+    date: "Dec 2025",
+    skills: [<FaReact key={0} />, <SiTailwindcss key={1} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 520,
+    name: "Lunar Lions",
+    description:
+      "My middle school team made an Artemis II mission simulation with Unity for the NASA ADC.",
+    link: "https://thelunarlions.github.io",
+    date: "Dec 2024",
+    skills: [<TbBrandCSharp key={0} />, , <SiUnity key={1} />],
+    tags: ["Game", "Learning"],
+  },
+  {
+    id: 530,
+    name: "InfiNote",
+    description:
+      "Note taking app with features like rich text editing, custom topics, note management, and more.",
+    link: "https://tonymac129.github.io/infinote/",
+    date: "Jul 2025",
+    skills: [<FaReact key={0} />],
+    tags: ["Web App"],
+  },
+  {
+    id: 540,
+    name: "Sodia",
+    description:
+      "Basic full-stack social media app with posting, following, commenting, and liking features.",
+    link: "https://sodia-33dm.onrender.com",
+    date: "Nov 2025",
+    skills: [
+      <FaReact key={0} />,
+      <SiExpress key={1} />,
+      <SiNodedotjs key={2} />,
+      <SiMongodb key={3} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 550,
+    name: "Relog",
+    description:
+      "Simple, fully responsive, and optimized full-stack daily activity tracking app with powerful activity and data management features.",
+    link: "https://relog-app.vercel.app/",
+    date: "Jan 2026",
+    skills: [
+      <FaReact key={0} />,
+      <SiNextdotjs key={1} />,
+      <SiTypescript key={2} />,
+      <SiTailwindcss key={3} />,
+      <SiMongodb key={4} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 560,
+    name: "Etruscan Blog",
+    description:
+      "Simple blog site with in-depth articles analyzing the Etruscans for an ancient civilization class group project.",
+    link: "https://etruscan-blog.vercel.app/",
+    date: "Jan 2026",
+    skills: [
+      <SiAstro key={0} />,
+      ,
+      <SiTypescript key={1} />,
+      <SiTailwindcss key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 570,
+    name: "Speadr",
+    description:
+      "All-in-one single page speed reading web app with tons of reading tools and customization features!",
+    link: "https://tonymac.net/speadr",
+    date: "Feb 2026",
+    skills: [
+      <FaReact key={0} />,
+      <SiTypescript key={1} />,
+      <SiTailwindcss key={2} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 580,
+    name: "Herded",
+    description:
+      "Fullstack would you rather quiz platform where you can create fully custom interactive would you rather quizzes!",
+    link: "https://herded.vercel.app/",
+    date: "Feb 2026",
+    skills: [
+      <FaReact key={0} />,
+      <SiNextdotjs key={1} />,
+      <SiTypescript key={2} />,
+      <SiTailwindcss key={3} />,
+      <SiMongodb key={4} />,
+    ],
+    tags: ["Web App"],
+  },
+  {
+    id: 590,
+    name: "LinguaLift",
+    description:
+      "Fullstack language app with the Next.js frontend made by me and the Java Spingboot backend by 3 others for my first hackathon, HackTJ 13.0!",
+    link: "https://hacktj-language.vercel.app/",
+    date: "Mar 2026",
+    skills: [
+      <FaReact key={0} />,
+      <SiNextdotjs key={1} />,
+      <SiTypescript key={2} />,
+      <SiTailwindcss key={3} />,
+      <SiMongodb key={4} />,
+    ],
+    tags: ["Web App"],
   },
 ];

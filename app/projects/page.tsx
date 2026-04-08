@@ -1,7 +1,7 @@
 import { projectData } from "@/lib/projects";
 import Hero from "@/components/layout/Hero";
+import Projects from "./Projects";
 import Link from "next/link";
-import Card from "@/components/projects/Card";
 
 function Page() {
   return (
@@ -15,11 +15,7 @@ function Page() {
         </Link>{" "}
         page.
       </Hero>
-      <div>
-        {projectData.map((project) => (
-          <Card key={project.id} project={project} />
-        ))}
-      </div>
+      <Projects projects={projectData} />
     </div>
   );
 }
