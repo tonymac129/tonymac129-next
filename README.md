@@ -8,7 +8,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel)
 
-[Personal website screenshot](/public/demos/tonymac129.png)
+![Personal website screenshot](/public/demos/tonymac129.png)
 
 My personal website with my projects, skill, blog, and about, now rewritten (for the fourth time) in Next.js, TypeScript, Tailwind, and Postgres! This rewrite has significantly improved performance, content, navigation, design, and SEO, and added multiple projects and additional content about me as well!
 
