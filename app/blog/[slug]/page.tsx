@@ -45,7 +45,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
           )}
         </div>
       </div>
-      <Contents post={postData} />
+      {postData.headings && <Contents post={postData} />}
     </div>
   );
 }

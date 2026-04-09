@@ -30,9 +30,9 @@ function Nav() {
             About
           </Link>
         </div>
-        <div className="absolute right-0">
+        {/* <div className="absolute right-0">
           <Search />
-        </div>
+        </div> */}
       </div>
     </nav>
   );

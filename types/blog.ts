@@ -4,7 +4,7 @@ export interface PostType {
   date: Date;
   content: string;
   slug: string;
-  headings: HeadingType[];
+  headings?: HeadingType[];
 }
 
 interface HeadingType {

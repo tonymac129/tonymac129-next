@@ -45,12 +45,14 @@ function Roles() {
                   className={`${attribute.color ? attribute.color : ""} transition-colors duration-300 cursor-pointer`}
                 >
                   {typeof attribute.icon === "string" ? (
-                    <Image
-                      src={attribute.icon}
-                      alt={attribute.name}
-                      width={43}
-                      height={43}
-                    />
+                    <div className="h-8.5">
+                      <Image
+                        src={attribute.icon}
+                        alt={attribute.name}
+                        width={44}
+                        height={44}
+                      />
+                    </div>
                   ) : (
                     attribute.icon
                   )}

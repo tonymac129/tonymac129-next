@@ -4,7 +4,7 @@ import Discord from "./Discord";
 
 function Hero() {
   return (
-    <div className="flex gap-x-20 flex-1 py-15 items-center">
+    <div className="flex gap-x-20 flex-1 py-15 items-center overflow-hidden">
       <div className="flex flex-col gap-y-7 flex-5">
         <div className="flex flex-col gap-y-3">
           <Greeting />
