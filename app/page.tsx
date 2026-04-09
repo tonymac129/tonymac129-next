@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero";
 
 export default function Home() {
   return (
-    <div className="flex flex-col px-40">
+    <div className="flex flex-col px-40 mb-15">
       <Hero />
     </div>
   );

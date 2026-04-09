@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="mb-15">
       <Hero title="Miscellaneous Stuff">
         You can find all my small learning projects, demos, tests, and other
         miscellaneous non-coding stuff here! To check out my more serious and

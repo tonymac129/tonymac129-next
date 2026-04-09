@@ -7,12 +7,14 @@ type BtnProps = {
   onclick?: () => void;
   link?: string;
   primary?: boolean;
+  children?: React.ReactNode;
+  left?: boolean;
 };
 
 const btnStyles =
-  "bg-transparent font-bold px-4 py-2 border-2 text-zinc-300 border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 ";
+  "bg-transparent font-bold px-4 py-2 border-2 text-zinc-300 border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 flex items-center gap-x-3 w-fit ";
 
-function Btn({ text, onclick, link, primary }: BtnProps) {
+function Btn({ text, onclick, link, primary, children, left }: BtnProps) {
   return link ? (
     <Link
       href={link}
@@ -23,11 +25,15 @@ function Btn({ text, onclick, link, primary }: BtnProps) {
           : "")
       }
     >
+      {(left && children) || ""}
       {text}
+      {(!left && children) || ""}
     </Link>
   ) : (
     <button className={btnStyles} onClick={onclick}>
+      {(left && children) || ""}
       {text}
+      {(!left && children) || ""}
     </button>
   );
 }

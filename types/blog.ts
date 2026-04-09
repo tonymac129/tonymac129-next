@@ -4,4 +4,10 @@ export interface PostType {
   date: Date;
   content: string;
   slug: string;
+  headings: HeadingType[];
+}
+
+interface HeadingType {
+  id: string;
+  name: string;
 }

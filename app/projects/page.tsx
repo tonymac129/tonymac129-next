@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="mb-15">
       <Hero title="Projects">
         The coding projects here are the ones I&apos;ve put some effort into
         making, for my simple or unfinished learning stuff and non-coding

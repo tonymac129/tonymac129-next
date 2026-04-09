@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="mb-15">
       <Hero title="My Skills">
         Here are some skills and hobbies that I know or am currently learning,
         with a progress bar that shows my mastery on the skill.

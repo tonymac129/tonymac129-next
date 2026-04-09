@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="mb-15">
       <Hero title="About Me">
         Here&apos;s some stuff about me, my contact info, and other interesting
         things if you want to reach out or learn more about me. You can also

@@ -3,14 +3,45 @@ import type { PostType } from "@/types/blog";
 import Hero from "@/components/layout/Hero";
 import Posts from "./Posts";
 
-const posts: PostType[] = [
+export const posts: PostType[] = [
   {
     id: 0,
-    title: "My First Blog Post on This New Site!",
+    title: "My First Blog Post!",
     date: new Date("4/8/26"),
     slug: "first-post",
     content:
-      "Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much.",
+      "Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much. Here are some short blog posts on my skills, experiences, and just random stuff if I feel like writing about it. Disclaimer: I'm not the best writer or the most proactive person, so don't expect too much.",
+    headings: [
+      { id: "heading-1", name: "Heading 1" },
+      { id: "heading-2", name: "Heading 1" },
+      { id: "heading-3", name: "Heading 1" },
+    ],
+  },
+  {
+    id: 1,
+    title: "My Second Blog Post!",
+    date: new Date("4/8/26"),
+    slug: "second-post",
+    content:
+      "Another blog that totally isn't just a placeholder thing to test whether this blog system thing works.",
+    headings: [
+      { id: "heading-1", name: "Heading 1" },
+      { id: "heading-2", name: "Heading 1" },
+      { id: "heading-3", name: "Heading 1" },
+    ],
+  },
+  {
+    id: 2,
+    title: "My Third Blog Post!",
+    date: new Date("4/8/26"),
+    slug: "third-post",
+    content:
+      "Wow look at that another totally original completely real blog post that definitely isn't made for the same testing purposes.",
+    headings: [
+      { id: "heading-1", name: "Heading 1" },
+      { id: "heading-2", name: "Heading 1" },
+      { id: "heading-3", name: "Heading 1" },
+    ],
   },
 ];
 
@@ -38,7 +69,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="mb-15">
       <Hero title="My Blog">
         Some short blog posts on my skills, experiences, and just random stuff
         if I feel like writing about it. I&apos;m not exactly the best writer

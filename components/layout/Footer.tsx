@@ -12,7 +12,7 @@ import { SiGithub } from "react-icons/si";
 
 function Footer() {
   return (
-    <div className="border-t-2 border-zinc-800 flex flex-col items-center gap-y-5 py-15 mt-15">
+    <div className="border-t-2 border-zinc-800 flex flex-col items-center gap-y-5 py-15">
       <span className="text-sm text-zinc-400">
         Made with ❤️ and too many all nighters
       </span>
