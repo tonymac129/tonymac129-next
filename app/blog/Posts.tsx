@@ -14,7 +14,7 @@ function Posts({ posts }: { posts: PostType[] }) {
   }, [posts, search]);
 
   return (
-    <div className="flex flex-col gap-y-10 items-center px-40">
+    <div className="flex flex-col gap-y-10 items-center px-5 sm:px-10 lg:px-40">
       <Input
         placeholder="Search blog posts"
         value={search}

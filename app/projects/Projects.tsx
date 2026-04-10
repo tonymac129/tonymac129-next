@@ -15,14 +15,14 @@ function Projects({ projects }: { projects: ProjectType[] }) {
   }, [projects, search]);
 
   return (
-    <div className="flex flex-col gap-y-10 items-center">
+    <div className="flex flex-col gap-y-10 items-center max-w-350 mx-auto w-full ">
       <Input
         placeholder="Search projects"
         value={search}
         setValue={setSearch}
         className="text-lg w-120"
       />
-      <div className="flex flex-wrap justify-center gap-5 px-40">
+      <div className="flex flex-wrap justify-center gap-5 px-5 sm:px-10 lg:px-40">
         {displayedProjects.length > 0 ? (
           displayedProjects.map((project) => (
             <Project key={project.id} project={project} />

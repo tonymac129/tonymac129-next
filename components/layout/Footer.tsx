@@ -12,11 +12,11 @@ import { SiGithub } from "react-icons/si";
 
 function Footer() {
   return (
-    <div className="border-t-2 border-zinc-800 flex flex-col items-center gap-y-5 py-15">
-      <span className="text-sm text-zinc-400">
+    <div className="border-t-2 border-zinc-800 flex flex-col items-center gap-y-5 py-15 px-5">
+      <span className="text-sm text-zinc-400 text-center">
         Made with ❤️ and too many all nighters
       </span>
-      <span className="text-sm text-zinc-400">
+      <span className="text-sm text-zinc-400 text-center">
         &copy; {new Date().getFullYear()}{" "}
         <a
           href="https://github.com/tonymac129"
@@ -26,7 +26,7 @@ function Footer() {
           TonyMac129
         </a>
       </span>
-      <div className="text-zinc-400 flex gap-x-7 mt-5">
+      <div className="text-zinc-400 flex flex-wrap justify-center gap-x-7 gap-y-5 mt-5">
         <a href="mailto:yo@tonymac.net">
           <MdEmail size={25} className="cursor-pointer" />
         </a>

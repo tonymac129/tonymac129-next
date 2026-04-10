@@ -11,7 +11,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
   console.log(postIndex);
 
   return (
-    <div className="flex gap-x-10 pl-36 pr-40">
+    <div className="flex gap-x-10 pl-5 sm:pl-6 lg:pl-36 pr-5 sm:pr-10 lg:pr-40 max-w-430 mx-auto">
       <Sidebar posts={posts} post={postData} />
       <div className="flex-1 py-10 flex flex-col gap-y-5 pb-15">
         <div className="flex flex-col gap-y-3">
@@ -25,7 +25,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
           <hr className="h-1 bg-zinc-300 rounded-full" />
         </div>
         <p className="text-zinc-300">{postData.content}</p>
-        <div className="flex justify-center gap-x-10 mt-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-10 mt-10">
           {postIndex !== 0 && (
             <Btn
               text={posts[postIndex - 1].title}

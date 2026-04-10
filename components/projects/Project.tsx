@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Project({ project }: { project: ProjectType }) {
   return (
-    <div className="rounded-lg border-2 border-zinc-800 p-5 flex flex-col gap-y-5 w-[calc(50%-10px)]">
+    <div className="rounded-lg border-2 border-zinc-800 p-5 flex flex-col gap-y-5 min-w-70 w-[calc(50%-10px)]">
       {project.image && (
         <Image
           src={project.image}

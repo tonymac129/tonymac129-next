@@ -90,7 +90,7 @@ function Page() {
         things if you want to reach out or learn more about me. You can also
         find this portfolio&apos;s information here.
       </Hero>
-      <div className="flex gap-x-15 px-40">
+      <div className="flex flex-col md:flex-row gap-15 px-5 sm:px-10 lg:px-40 max-w-430 mx-auto">
         <div className="flex flex-col gap-y-3 flex-1 h-fit">
           {statuses.map((status) => (
             <Status key={status.id} status={status} />

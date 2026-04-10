@@ -40,7 +40,7 @@ function Activity({ activity }: ActivityProps) {
   }, [activity]);
 
   return (
-    <div className="flex items-center gap-x-4 px-4 py-2 rounded-lg bg-zinc-900 border-2 border-zinc-800">
+    <div className="flex items-center gap-x-4 px-4 flex-1 w-full! py-2 rounded-lg bg-zinc-900 border-2 border-zinc-800">
       {imageUrl ? (
         <Image
           src={imageUrl}

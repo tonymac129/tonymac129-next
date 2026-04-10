@@ -20,11 +20,16 @@ function Input({ placeholder, value, setValue, width, className }: InputProps) {
   }
 
   return (
-    <div className="relative flex items-center text-zinc-300">
+    <div
+      style={{ width: width + "px" }}
+      className="relative flex items-center text-zinc-300 max-w-[80%]! mx-auto"
+    >
       <input
         type="text"
-        style={{ width: width + "px" }}
-        className={"bg-zinc-900 outline-none rounded-lg px-4 py-2 " + className}
+        className={
+          "bg-zinc-900 outline-none rounded-lg px-4 py-2 max-w-full " +
+          className
+        }
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}

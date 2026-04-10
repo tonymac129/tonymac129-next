@@ -10,7 +10,7 @@ function Roles() {
 
   return (
     <div className="flex flex-col gap-y-5">
-      <div className="flex gap-x-3 items-center">
+      <div className="flex gap-3 items-center flex-wrap">
         <span className="text-zinc-300 font-bold">I am a:</span>
         {roles.map((role) => (
           <div
@@ -22,7 +22,7 @@ function Roles() {
           </div>
         ))}
       </div>
-      <div className="flex gap-x-2">
+      <div className="flex gap-0 lg:gap-2 flex-wrap">
         <AnimatePresence mode="popLayout">
           {roles
             .find((role) => role.id === selected)

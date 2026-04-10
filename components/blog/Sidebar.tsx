@@ -8,7 +8,7 @@ type SidebarProps = {
 
 function Sidebar({ posts, post }: SidebarProps) {
   return (
-    <div className="flex flex-col gap-y-5 py-5 w-65 border-r-2 border-r-zinc-800 pr-3 sticky top-18.5 h-[calc(100vh-74px)]">
+    <div className="hidden sm:flex flex-col gap-y-5 py-5 w-65 border-r-2 border-r-zinc-800 pr-3 sticky top-16.5 sm:top-18.5 h-[calc(100vh-66px)] sm:h-[calc(100vh-74px)] overflow-auto">
       <h2 className="text-white text-lg font-bold px-4">My Posts</h2>
       <div className="flex flex-col gap-y-3">
         {posts.map((sidePost) => (

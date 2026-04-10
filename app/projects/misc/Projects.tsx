@@ -22,13 +22,13 @@ function Projects({ projects }: { projects: ProjectType[] }) {
         setValue={setSearch}
         className="text-lg w-120"
       />
-      <div className="flex flex-wrap justify-center gap-3 px-40">
+      <div className="flex flex-wrap justify-center gap-3 px-5 sm:px-10 lg:px-40 max-w-430 mx-auto">
         {displayedProjects.length > 0 ? (
           displayedProjects.map((project) => (
             <Card key={project.id} project={project} />
           ))
         ) : (
-          <div className="text-zinc-300">
+          <div className="text-zinc-300 text-center">
             No projects found! Maybe try{" "}
             <Link href="/projects" className="text-blue-500 hover:underline">
               here
