@@ -1,4 +1,4 @@
-import type { Skilltype } from "@/types/skill";
+import type { SkillType } from "@/types/skill";
 import {
   FaHtml5,
   FaReact,
@@ -26,7 +26,7 @@ import {
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 
-export const skillData: Skilltype[] = [
+export const skillData: SkillType[] = [
   {
     id: 0,
     name: "HTML",

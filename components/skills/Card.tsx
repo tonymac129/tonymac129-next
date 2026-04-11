@@ -1,14 +1,34 @@
 "use client";
 
-import type { Skilltype } from "@/types/skill";
+import type { SkillType } from "@/types/skill";
 import { motion } from "framer-motion";
 
-function Card({ skill }: { skill: Skilltype }) {
+type CardProps = {
+  skill: SkillType;
+  index: number;
+};
+
+function Card({ skill, index }: CardProps) {
   return (
     <motion.div
-      whileHover={{ y: -3, scale: 1.03 }}
-      transition={{ duration: 0.7, type: "spring" }}
-      className="bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-4 py-2 gap-y-3 text-sm w-65 h-full"
+      initial={{ y: 50, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: index * 0.05,
+          duration: 0.5,
+          type: "spring",
+        },
+      }}
+      exit={{ y: 50, opacity: 0 }}
+      whileHover={{
+        y: -3,
+        scale: 1.03,
+        transition: { duration: 0.7, type: "spring" },
+      }}
+      className="bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-4 py-2 gap-y-3 text-sm w-67 h-full"
+      layout
     >
       <div className="flex gap-x-3 items-center text-zinc-300">
         <div className="text-4xl">{skill.icon}</div>

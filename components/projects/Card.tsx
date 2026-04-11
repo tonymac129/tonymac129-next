@@ -4,11 +4,31 @@ import type { ProjectType } from "@/types/project";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-function Card({ project }: { project: ProjectType }) {
+type CardProps = {
+  project: ProjectType;
+  index: number;
+};
+
+function Card({ project, index }: CardProps) {
   return (
     <motion.div
-      whileHover={{ y: -3, scale: 1.03 }}
-      transition={{ duration: 0.7, type: "spring" }}
+      initial={{ y: 50, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: index * 0.05,
+          duration: 0.5,
+          type: "spring",
+        },
+      }}
+      exit={{ y: 50, opacity: 0 }}
+      whileHover={{
+        y: -3,
+        scale: 1.03,
+        transition: { duration: 0.7, type: "spring" },
+      }}
+      layout
     >
       <Link
         href={project.link}

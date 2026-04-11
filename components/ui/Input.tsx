@@ -22,7 +22,7 @@ function Input({ placeholder, value, setValue, width, className }: InputProps) {
   return (
     <div
       style={{ width: width + "px" }}
-      className="relative flex items-center text-zinc-300 max-w-[80%]! mx-auto"
+      className="relative flex items-center text-zinc-300 max-w-full! mx-auto"
     >
       <input
         type="text"
