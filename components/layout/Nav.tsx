@@ -1,11 +1,12 @@
 import { projectData, miscData } from "@/lib/projects";
+import { posts } from "@/app/blog/page";
 import Image from "next/image";
 import Search from "./Search";
 import Link from "next/link";
 
 const navLinkStyles =
   "text-zinc-300 px-2 py-1 sm:px-4 sm:py-2 hover:bg-zinc-900 rounded-lg transition-colors duration-300";
-const allResults = [...projectData, ...miscData];
+const allResults = [...projectData, ...miscData, ...posts];
 
 function Nav() {
   return (

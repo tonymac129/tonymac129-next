@@ -9,12 +9,12 @@ const sortedMiscData = miscData.sort(
 );
 
 export const metadata: Metadata = {
-  title: "Misc Projects | TonyMac129",
+  title: "Misc | TonyMac129",
   description:
     "You can find all my small learning projects, demos, tests, and other miscellaneous non-coding stuff here! To check out my more serious and complex coding projects, click here!",
   authors: [{ name: "TonyMac129", url: "https://tonymac.net" }],
   openGraph: {
-    title: "Misc Projects | TonyMac129",
+    title: "Misc | TonyMac129",
     description:
       "You can find all my small learning projects, demos, tests, and other miscellaneous non-coding stuff here! To check out my more serious and complex coding projects, click here!",
     url: "https://tonymac.net/projects/misc",

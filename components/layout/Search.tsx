@@ -1,20 +1,33 @@
 "use client";
 
 import type { ProjectType } from "@/types/project";
+import type { PostType } from "@/types/blog";
 import { useMemo, useState } from "react";
 import Input from "../ui/Input";
 
-function Search({ results }: { results: ProjectType[] }) {
+function Search({ results }: { results: (ProjectType | PostType)[] }) {
   const [search, setSearch] = useState<string>("");
-  const searchResults = useMemo<ProjectType[]>(() => {
+  const searchResults = useMemo<(ProjectType | PostType)[]>(() => {
     return search.trim().length > 1
-      ? results.filter(
-          (result) =>
-            result.name.toLowerCase().includes(search.trim().toLowerCase()) ||
-            result.description
-              ?.toLowerCase()
-              .includes(search.trim().toLowerCase()),
-        )
+      ? results.filter((result) => {
+          if ("name" in result) {
+            return (
+              result.name.toLowerCase().includes(search.trim().toLowerCase()) ||
+              result.description
+                ?.toLowerCase()
+                .includes(search.trim().toLowerCase())
+            );
+          } else {
+            return (
+              result.title
+                .toLowerCase()
+                .includes(search.trim().toLowerCase()) ||
+              result.tags.find((tag) =>
+                tag.toLowerCase().includes(search.trim().toLowerCase()),
+              )
+            );
+          }
+        })
       : [];
   }, [results, search]);
 
@@ -31,12 +44,16 @@ function Search({ results }: { results: ProjectType[] }) {
         <div className="absolute w-full top-full left-0 flex flex-col gap-y-2 bg-zinc-900 rounded-b-lg p-2">
           {searchResults.slice(0, 10).map((result) => (
             <a
-              key={result.id + result.name}
-              href={(result.repo ? "https://" : "") + result.link}
-              target="_blank"
+              key={result.id + ("name" in result ? result.name : result.title)}
+              href={
+                "name" in result
+                  ? (result.repo ? "https://" : "") + result.link
+                  : "/blog/" + result.slug
+              }
+              target={"name" in result ? "_blank" : ""}
               className="text-zinc-300 px-2 py-1 hover:text-blue-500 transition-colors duration-300 cursor-pointer"
             >
-              {result.name}
+              {"name" in result ? result.name : result.title}
             </a>
           ))}
         </div>

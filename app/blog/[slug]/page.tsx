@@ -1,8 +1,45 @@
 import { posts } from "../page";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
+import { redirect } from "next/navigation";
 import Sidebar from "@/components/blog/Sidebar";
 import Btn from "@/components/ui/Btn";
 import Contents from "@/components/blog/Contents";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const postData = posts.find((post) => post.slug === slug);
+  if (postData) {
+    const title = `${postData.title} | TonyMac129`;
+    const description =
+      postData.content.slice(0, 100) +
+      (postData.content.length > 100 ? "..." : "");
+    return {
+      title,
+      description,
+      authors: [{ name: "TonyMac129", url: "https://tonymac.net" }],
+      openGraph: {
+        title,
+        description,
+        url: `https://tonymac.net/blog/${slug}`,
+        siteName: "TonyMac129",
+        images: [
+          {
+            url: "/logo.png",
+            width: 50,
+            height: 50,
+          },
+        ],
+        type: "website",
+      },
+    };
+  } else {
+    redirect("/blog");
+  }
+}
 
 async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
