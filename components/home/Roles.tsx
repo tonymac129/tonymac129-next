@@ -12,29 +12,27 @@ function Roles() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const refreshInterval = setInterval(() => {
-      if (!containerRef.current?.matches(":hover")) {
-        setSelected((prev) =>
-          current.current == roles.length - 1 ? 0 : prev + 1,
-        );
-      }
-    }, 4000);
-
     const progressInterval = setInterval(() => {
       if (!containerRef.current?.matches(":hover")) {
-        setProgress((prev) => prev + 1);
+        setProgress((prev) => {
+          if (prev == 100) {
+            setSelected((p) =>
+              current.current == roles.length - 1 ? 0 : p + 1,
+            );
+            return 0;
+          }
+          return prev + 1;
+        });
       }
     }, 40);
 
     return () => {
-      clearInterval(refreshInterval);
       clearInterval(progressInterval);
     };
   }, []);
 
   useEffect(() => {
     current.current = selected;
-    setProgress(0);
   }, [selected]);
 
   return (

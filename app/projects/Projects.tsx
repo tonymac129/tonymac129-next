@@ -20,7 +20,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
         placeholder="Search projects"
         value={search}
         setValue={setSearch}
-        className="text-lg w-120"
+        className="text-lg"
       />
       <div className="flex flex-wrap justify-center gap-5 px-5 sm:px-10 lg:px-40">
         {displayedProjects.length > 0 ? (

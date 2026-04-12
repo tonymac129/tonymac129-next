@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import type { StatusType } from "@/types/about";
+import type { AboutType, StatusType } from "@/types/about";
+import about from "@/lib/about.json";
 import Hero from "@/components/layout/Hero";
 import Status from "@/components/about/Status";
 import Section from "@/components/about/Section";
+import About from "./About";
 
 const statuses: StatusType[] = [
   {
@@ -83,6 +85,8 @@ export const metadata: Metadata = {
 };
 
 function Page() {
+  const aboutData: AboutType[] = about.about;
+
   return (
     <div className="mb-15">
       <Hero title="About Me">
@@ -90,7 +94,7 @@ function Page() {
         things if you want to reach out or learn more about me. You can also
         find this portfolio&apos;s information here.
       </Hero>
-      <div className="flex flex-col md:flex-row gap-15 px-5 sm:px-10 lg:px-40 max-w-430 mx-auto">
+      <div className="flex flex-col md:flex-row gap-15 px-5 sm:px-10 lg:px-40 max-w-430 mx-auto mb-15">
         <div className="flex flex-col gap-y-3 flex-1 h-fit">
           {statuses.map((status) => (
             <Status key={status.id} status={status} />
@@ -152,6 +156,7 @@ function Page() {
           </Section>
         </div>
       </div>
+      <About aboutData={aboutData} />
     </div>
   );
 }

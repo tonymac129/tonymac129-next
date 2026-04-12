@@ -1,9 +1,11 @@
+import { projectData, miscData } from "@/lib/projects";
 import Image from "next/image";
 import Search from "./Search";
 import Link from "next/link";
 
 const navLinkStyles =
   "text-zinc-300 px-2 py-1 sm:px-4 sm:py-2 hover:bg-zinc-900 rounded-lg transition-colors duration-300";
+const allResults = [...projectData, ...miscData];
 
 function Nav() {
   return (
@@ -31,7 +33,7 @@ function Nav() {
           </Link>
         </div>
         <div className="absolute right-0 hidden md:block">
-          <Search />
+          <Search results={allResults} />
         </div>
       </div>
     </nav>

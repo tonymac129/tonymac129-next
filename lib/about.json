@@ -1,0 +1,239 @@
+{
+  "about": [
+    {
+      "id": 0,
+      "name": "movies",
+      "link": "https://letterboxd.com/tonymac129/diary/",
+      "options": [
+        {
+          "id": 0,
+          "name": "I've watched",
+          "titles": [
+            "Your Name",
+            "Spirited Away",
+            "Weathering with You",
+            "Jujutsu Kaisen 0",
+            "Mugen Train"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I like",
+          "titles": [
+            "Interstellar",
+            "Your Name",
+            "Jujutsu Kaisen 0",
+            "Spirited Away",
+            "Mugen Train"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "TV Shows",
+      "options": [
+        {
+          "id": 0,
+          "name": "I've watched",
+          "titles": [
+            "The Mandalorian",
+            "Stranger Things",
+            "Breaking Bad",
+            "Loki",
+            "Gravity Falls",
+            "Arcane",
+            "Squid Game"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I like",
+          "titles": [
+            "The Mandalorian",
+            "Stranger Things",
+            "Breaking Bad",
+            "Gravity Falls",
+            "Arcane"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "anime",
+      "link": "https://myanimelist.net/profile/tonymac129",
+      "options": [
+        {
+          "id": 0,
+          "name": "I've watched",
+          "titles": [
+            "Attack on Titan",
+            "Chainsaw Man",
+            "Demon Slayer",
+            "Frieren",
+            "Jujutsu Kaisen",
+            "My Dress-Up Darling",
+            "My Hero Academia",
+            "The Fragrant Flower Blooms with Dignity",
+            "Your Lie in April"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I like",
+          "titles": [
+            "Attack on Titan",
+            "Chainsaw Man",
+            "Demon Slayer",
+            "Frieren",
+            "Jujutsu Kaisen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "books",
+      "link": "https://app.thestorygraph.com/books-read/tonymac129",
+      "options": [
+        {
+          "id": 0,
+          "name": "I've read",
+          "titles": [
+            "Animal Farm",
+            "The Iliad",
+            "Harry Potter",
+            "Dr. Jekyll and Mr. Hyde",
+            "Fahrenheit 451",
+            "Holes",
+            "The Maze Runner",
+            "Lord of the Rings",
+            "The Hobbit",
+            "Percy Jackson"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I like",
+          "titles": [
+            "The Iliad",
+            "Harry Potter",
+            "Holes",
+            "The Maze Runner",
+            "Lord of the Rings",
+            "Percy Jackson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "places",
+      "options": [
+        {
+          "id": 0,
+          "name": "I've been to",
+          "titles": [
+            "Virginia",
+            "Maryland",
+            "DC",
+            "North Carolina",
+            "Tennessee",
+            "New Jersey",
+            "New York",
+            "Nebraska",
+            "Toronto",
+            "Taipei",
+            "Shanghai",
+            "Okinawa"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I want to go",
+          "titles": ["California", "London", "Chongching", "Tokyo"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "food",
+      "options": [
+        {
+          "id": 0,
+          "name": "I like",
+          "titles": [
+            "Takis",
+            "Oreo",
+            "Doritos",
+            "Pringles",
+            "Pizza",
+            "Beef noodles",
+            "Rice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "games",
+      "options": [
+        {
+          "id": 0,
+          "name": "I play",
+          "titles": [
+            "Brawl Stars",
+            "Battle Cats",
+            "Minecraft",
+            "Stardew Valley",
+            "Factorio",
+            "Wordle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "tools",
+      "options": [
+        {
+          "id": 0,
+          "name": "I own",
+          "titles": [
+            "HP Laptop",
+            "Geeky mechanical keyboard",
+            "Samsung S25",
+            "Bambu Lab A1",
+            "AMS Lite",
+            "CMF Buds Pro 2",
+            "HP Pavilion Chromebook",
+            "TI-84 Calculator",
+            "Raspberry Pi Pico"
+          ]
+        },
+        {
+          "id": 1,
+          "name": "I use",
+          "titles": [
+            "VS Code",
+            "Firefox Developer Edition",
+            "Arch Linux",
+            "Autodesk Fusion",
+            "Spotify",
+            "Slack"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "I want to get",
+          "titles": [
+            "Raspberry Pi 5",
+            "Framework 15",
+            "Wireless Logitech keyboard"
+          ]
+        }
+      ]
+    }
+  ]
+}

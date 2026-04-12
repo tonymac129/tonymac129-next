@@ -62,8 +62,15 @@ function Projects({ projects }: { projects: ProjectType[] }) {
 
   return (
     <div className="flex flex-col gap-y-10 px-5 sm:px-10 lg:px-40 max-w-430 mx-auto">
-      <div className="flex justify-center relative items-center">
-        <div className="text-zinc-300 flex items-center gap-x-3 absolute left-0">
+      <div className="flex flex-col gap-y-3 lg:flex-row justify-center relative items-center">
+        <div className="lg:absolute right-0">
+          <Input
+            placeholder="Search misc"
+            value={search}
+            setValue={setSearch}
+          />
+        </div>
+        <div className="text-zinc-300 flex items-center gap-x-3 lg:absolute left-0">
           Sort by{" "}
           <select
             value={sortMethod}
@@ -76,7 +83,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
             <option value="category">Category</option>
           </select>
         </div>
-        <div className="flex gap-x-3">
+        <div className="flex gap-3 flex-wrap justify-center">
           {filters.slice(0, 4).map((text, i) => (
             <Filter
               key={i}
@@ -98,13 +105,6 @@ function Projects({ projects }: { projects: ProjectType[] }) {
             <option value="7">2023</option>
             <option value="8">2022</option>
           </select>
-        </div>
-        <div className="absolute right-0">
-          <Input
-            placeholder="Search misc"
-            value={search}
-            setValue={setSearch}
-          />
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-3">
