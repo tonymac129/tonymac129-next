@@ -89,7 +89,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
           <select
             value={filter as number}
             onChange={(e) => setFilter(Number(e.target.value) || null)}
-            className="appearance-none py-2 w-20 transition-colors duration-300 rounded-full border-2 border-zinc-800 hover:bg-zinc-900 text-zinc-300 cursor-pointer font-bold text-center outline-none"
+            className="appearance-none py-2 w-20 transition-colors duration-300 rounded-full border-2 border-zinc-800 hover:bg-zinc-900 text-zinc-300 cursor-pointer text-center outline-none"
           >
             <option value="0">Year</option>
             <option value="4">2026</option>

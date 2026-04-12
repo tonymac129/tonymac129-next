@@ -4,11 +4,31 @@ import type { PostType } from "@/types/blog";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-function Post({ post }: { post: PostType }) {
+type PostProps = {
+  post: PostType;
+  index: number;
+};
+
+function Post({ post, index }: PostProps) {
   return (
     <motion.div
-      whileHover={{ y: -3, scale: 1.03 }}
-      transition={{ duration: 0.7, type: "spring" }}
+      initial={{ y: 50, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: index * 0.05,
+          duration: 0.5,
+          type: "spring",
+        },
+      }}
+      exit={{ y: 50, opacity: 0 }}
+      whileHover={{
+        y: -3,
+        scale: 1.03,
+        transition: { duration: 0.7, type: "spring" },
+      }}
+      layout
     >
       <Link
         href={"/blog/" + post.slug}

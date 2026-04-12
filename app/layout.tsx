@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Nav from "@/components/layout/Nav";
+import Animate from "@/components/layout/Animate";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
@@ -39,7 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Nav />
-        {children}
+        <Animate>{children}</Animate>
         <Footer />
       </body>
     </html>

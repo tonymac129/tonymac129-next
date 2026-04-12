@@ -5,6 +5,7 @@ export interface PostType {
   content: string;
   slug: string;
   headings?: HeadingType[];
+  tags: string[];
 }
 
 interface HeadingType {
