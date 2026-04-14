@@ -32,15 +32,17 @@ function Card({ project, index }: CardProps) {
     >
       <Link
         href={project.link}
-        className="bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-4 py-2 gap-y-3 text-sm w-50 h-full"
+        className="bg-zinc-300 dark:bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-4 py-2 gap-y-3 text-sm w-50 h-full"
       >
-        <h2 className="text-lg text-white font-bold">{project.name}</h2>
-        <div className="flex gap-x-3 text-zinc-300 text-2xl">
+        <h2 className="text-lg text-black dark:text-white font-bold">
+          {project.name}
+        </h2>
+        <div className="flex gap-x-3 text-zinc-800 dark:text-zinc-300 text-2xl">
           {project.skills?.map((skill, i) => (
             <div key={i}>{skill}</div>
           ))}
         </div>
-        <div className="flex flex-wrap gap-1.5 text-xs text-zinc-300">
+        <div className="flex flex-wrap gap-1.5 text-xs text-zinc-800 dark:text-zinc-300">
           {project.tags.map((tag, i) => (
             <div
               key={i}
@@ -50,7 +52,7 @@ function Card({ project, index }: CardProps) {
             </div>
           ))}
         </div>
-        <div className="text-zinc-300">{project.date}</div>
+        <div className="text-zinc-800 dark:text-zinc-300">{project.date}</div>
       </Link>
     </motion.div>
   );

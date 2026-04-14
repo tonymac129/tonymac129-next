@@ -38,17 +38,19 @@ function Roles() {
   return (
     <div className="flex flex-col gap-y-5 group/container" ref={containerRef}>
       <div className="flex gap-3 items-center flex-wrap">
-        <span className="text-zinc-300 font-bold">I am a:</span>
+        <span className="text-zinc-800 dark:text-zinc-300 font-bold">
+          I am a:
+        </span>
         {roles.map((role) => (
           <div
             key={role.id}
             onClick={() => setSelected(role.id)}
-            className={`px-4 py-2 text-zinc-300 border-2 font-bold text-sm border-zinc-800 overflow-hidden z-2 rounded-full
-              cursor-pointer relative  ${selected === role.id ? "group-hover/container:bg-zinc-800" : "bg-transparent hover:bg-zinc-900"} transition-colors duration-300`}
+            className={`px-4 py-2 text-zinc-800 dark:text-zinc-300 border-2 font-bold text-sm border-zinc-500 dark:border-zinc-800 overflow-hidden z-2 rounded-full
+              cursor-pointer relative  ${selected === role.id ? "group-hover/container:bg-zinc-300 dark:group-hover/container:bg-zinc-800" : "bg-transparent hover:bg-zinc-300 dark:hover:bg-zinc-900"} transition-colors duration-300`}
           >
             {selected === role.id && (
               <span
-                className="bg-zinc-900 -z-1 h-full absolute top-0 left-0 group-hover/container:bg-zinc-800 transition-colors duration-300"
+                className="bg-zinc-300 dark:bg-zinc-900 -z-1 h-full absolute top-0 left-0 group-hover/container:bg-zinc-300 dark:group-hover/container:bg-zinc-800 transition-colors duration-300"
                 style={{ width: progress + "%" }}
               />
             )}
@@ -67,7 +69,7 @@ function Roles() {
                 exit={{ y: 50, opacity: 0 }}
                 transition={{ delay: i * 0.05, duration: 0.5, type: "spring" }}
                 key={i + attribute.name}
-                className="text-zinc-300 flex flex-col items-center gap-y-2 w-20 group cursor-pointer"
+                className="text-zinc-800 dark:text-zinc-300 flex flex-col items-center gap-y-2 w-20 group cursor-pointer"
                 onClick={() => {
                   if (attribute.link) {
                     window.open("https://" + attribute.link, "_blank");
@@ -91,7 +93,7 @@ function Roles() {
                     attribute.icon
                   )}
                 </motion.div>
-                <div className="text-zinc-400 text-sm text-center w-full">
+                <div className="text-zinc-700 dark:text-zinc-400 text-sm text-center w-full">
                   {attribute.name}
                 </div>
               </motion.div>

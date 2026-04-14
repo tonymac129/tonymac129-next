@@ -37,7 +37,10 @@ function Greeting() {
   }, []);
 
   return (
-    <h2 className="w-fit cursor-pointer text-zinc-400 italic" onClick={greet}>
+    <h2
+      className="w-fit cursor-pointer text-zinc-700 dark:text-zinc-400 italic"
+      onClick={greet}
+    >
       {greeting}
     </h2>
   );

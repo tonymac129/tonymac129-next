@@ -8,11 +8,11 @@ function Hero() {
       <div className="flex flex-col gap-y-7 flex-2">
         <div className="flex flex-col gap-y-3">
           <Greeting />
-          <h1 className="text-4xl font-extrabold text-white">
+          <h1 className="text-4xl font-extrabold text-black dark:text-white">
             👋 Hey, I&apos;m <span className="text-blue-500">TonyMac129</span>
           </h1>
         </div>
-        <p className="text-zinc-300 w-full max-w-120">
+        <p className="text-zinc-800 dark:text-zinc-300 w-full max-w-120">
           This is my personal website, where you can check out my projects,
           skillset, blog, and other stuff about me!
         </p>

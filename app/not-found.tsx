@@ -20,7 +20,7 @@ function NotFound() {
           404
         </h1>
       </div>
-      <p className="w-170 text-zinc-300 mt-5">
+      <p className="w-170 text-zinc-800 dark:text-zinc-300 mt-5">
         Uhhh, looks like that page doesn&apos;t exist... I&apos;m probably being
         lazy again and not bothering to finish this duct-taped portfolio site.
         Or maybe you typed the address wrong. Who knows, just submit an issue{" "}

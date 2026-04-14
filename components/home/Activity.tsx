@@ -40,7 +40,7 @@ function Activity({ activity }: ActivityProps) {
   }, [activity]);
 
   return (
-    <div className="flex items-center gap-x-4 px-4 flex-1 w-full! py-2 rounded-lg bg-zinc-900 border-2 border-zinc-800">
+    <div className="flex items-center gap-x-4 px-4 flex-1 w-full! py-2 rounded-lg bg-zinc-300 dark:bg-zinc-900 border-2 border-zinc-500 dark:border-zinc-800">
       {imageUrl ? (
         <Image
           src={imageUrl}
@@ -53,18 +53,26 @@ function Activity({ activity }: ActivityProps) {
         <span className="text-3xl">🔥</span>
       )}
       <div className="flex flex-col gap-y-0.5">
-        <h3 className="text-white font-bold mb-1">{activity.name}</h3>
+        <h3 className="text-black dark:text-white font-bold mb-1">
+          {activity.name}
+        </h3>
         {activity.details && (
-          <p className="text-zinc-300 text-xs">{activity.details}</p>
+          <p className="text-zinc-800 dark:text-zinc-300 text-xs">
+            {activity.details}
+          </p>
         )}
         {activity.assets?.large_text && (
-          <p className="text-zinc-400 text-xs">{activity.assets.large_text}</p>
+          <p className="text-zinc-700 dark:text-zinc-400 text-xs">
+            {activity.assets.large_text}
+          </p>
         )}
         {activity.state && (
-          <p className="text-zinc-400 text-xs">{activity.state}</p>
+          <p className="text-zinc-700 dark:text-zinc-400 text-xs">
+            {activity.state}
+          </p>
         )}
         {activity.timestamps && (
-          <p className="text-zinc-400 text-xs">
+          <p className="text-zinc-700 dark:text-zinc-400 text-xs">
             {Math.floor(seconds / 3600) ? Math.floor(seconds / 3600) + ":" : ""}
             {Math.floor((seconds % 3600) / 60)
               .toString()

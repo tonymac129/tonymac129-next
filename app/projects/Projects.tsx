@@ -28,7 +28,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
             <Project key={project.id} project={project} />
           ))
         ) : (
-          <div className="text-zinc-300">
+          <div className="text-zinc-800 dark:text-zinc-300">
             No projects found! Maybe try{" "}
             <Link
               href="/projects/misc"

@@ -56,12 +56,12 @@ function Posts({ posts }: { posts: PostType[] }) {
             setValue={setSearch}
           />
         </div>
-        <div className="text-zinc-300 flex items-center gap-x-3 lg:absolute left-0">
+        <div className="text-zinc-800 dark:text-zinc-300 flex items-center gap-x-3 lg:absolute left-0">
           Sort by{" "}
           <select
             value={sortMethod}
             onChange={(e) => setSortMethod(e.target.value)}
-            className="appearance-none py-2 w-30 rounded-lg bg-zinc-900 cursor-pointer font-bold text-center outline-none"
+            className="appearance-none py-2 w-30 rounded-lg bg-zinc-300 dark:bg-zinc-900 cursor-pointer font-bold text-center outline-none"
           >
             <option value="latest">Latest</option>
             <option value="oldest">Oldest</option>
@@ -82,7 +82,7 @@ function Posts({ posts }: { posts: PostType[] }) {
           <select
             value={filter as number}
             onChange={(e) => setFilter(Number(e.target.value) || null)}
-            className="appearance-none py-2 w-20 transition-colors duration-300 rounded-full border-2 border-zinc-800 hover:bg-zinc-900 text-zinc-300 cursor-pointer text-center outline-none"
+            className="appearance-none py-2 w-20 transition-colors duration-300 rounded-full border-2 border-zinc-500 dark:border-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-900 text-zinc-800 dark:text-zinc-300 cursor-pointer text-center outline-none"
           >
             <option value="0">Year</option>
             <option value="3">2025</option>
@@ -96,7 +96,7 @@ function Posts({ posts }: { posts: PostType[] }) {
             <Post key={post.id} post={post} index={i} />
           ))
         ) : (
-          <div className="text-zinc-300">
+          <div className="text-zinc-800 dark:text-zinc-300">
             Yeah that&apos;s it... I just don&apos;t write blog posts
           </div>
         )}

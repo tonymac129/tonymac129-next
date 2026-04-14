@@ -41,7 +41,7 @@ function Search({ results }: { results: (ProjectType | PostType)[] }) {
         className={searchResults.length > 0 ? "rounded-b-none" : ""}
       />
       {searchResults.length > 0 && (
-        <div className="absolute w-full top-full left-0 flex flex-col gap-y-2 bg-zinc-900 rounded-b-lg p-2">
+        <div className="absolute w-full top-full left-0 flex flex-col gap-y-2 bg-zinc-300 dark:bg-zinc-900 rounded-b-lg p-2">
           {searchResults.slice(0, 10).map((result) => (
             <a
               key={result.id + ("name" in result ? result.name : result.title)}
@@ -51,7 +51,7 @@ function Search({ results }: { results: (ProjectType | PostType)[] }) {
                   : "/blog/" + result.slug
               }
               target={"name" in result ? "_blank" : ""}
-              className="text-zinc-300 px-2 py-1 hover:text-blue-500 transition-colors duration-300 cursor-pointer"
+              className="text-zinc-800 dark:text-zinc-300 px-2 py-1 hover:text-blue-500 transition-colors duration-300 cursor-pointer"
             >
               {"name" in result ? result.name : result.title}
             </a>

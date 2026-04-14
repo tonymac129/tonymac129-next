@@ -99,7 +99,7 @@ function Page() {
           {statuses.map((status) => (
             <Status key={status.id} status={status} />
           ))}
-          <div className="text-zinc-300 text-sm">
+          <div className="text-zinc-800 dark:text-zinc-300 text-sm">
             Status last updated 4/8/26
           </div>
         </div>

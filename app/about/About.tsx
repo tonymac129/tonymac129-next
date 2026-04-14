@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 const dropdownStyles =
-  "border-2 border-zinc-800 rounded-lg py-1 cursor-pointer outline-none appearance-none text-center hover:bg-zinc-900 transition-colors duration-300 w-35";
+  "border-2 border-zinc-500 dark:border-zinc-800 rounded-lg py-1 cursor-pointer outline-none appearance-none text-center hover:bg-zinc-300 dark:hover:bg-zinc-900 transition-colors duration-300 w-35";
 
 function About({ aboutData }: { aboutData: AboutType[] }) {
   const [parent, setParent] = useState<number>(0);
@@ -21,7 +21,7 @@ function About({ aboutData }: { aboutData: AboutType[] }) {
         privacy
       </h2>
       <div className="flex flex-col gap-y-3 items-center">
-        <div className="text-lg text-zinc-300 flex gap-3 items-center justify-center flex-wrap">
+        <div className="text-lg text-zinc-800 dark:text-zinc-300 flex gap-3 items-center justify-center flex-wrap">
           Here are (some of) the
           <select
             className={dropdownStyles}
@@ -67,7 +67,7 @@ function About({ aboutData }: { aboutData: AboutType[] }) {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, type: "spring", delay: i * 0.05 }}
-              className="bg-zinc-900 rounded-lg px-4 py-2 text-lg text-zinc-300 font-bold"
+              className="bg-zinc-300 dark:bg-zinc-900 rounded-lg px-4 py-2 text-lg text-zinc-800 dark:text-zinc-300 font-bold"
             >
               {title}
             </motion.div>

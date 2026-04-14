@@ -11,12 +11,16 @@ function Status({ status }: { status: StatusType }) {
       transition={{ duration: 0.7, type: "spring" }}
       href={status.link}
       target="_blank"
-      className="flex-1 rounded-lg bg-zinc-900 flex gap-x-5 px-6 py-3 h-3 items-center justify-between"
+      className="flex-1 rounded-lg bg-zinc-300 dark:bg-zinc-900 flex gap-x-5 px-6 py-3 h-3 items-center justify-between"
     >
       <div className="flex flex-col gap-y-1">
-        <h3 className="font-bold text-zinc-300">{status.heading}</h3>
+        <h3 className="font-bold text-zinc-800 dark:text-zinc-300">
+          {status.heading}
+        </h3>
         <h2 className="text-xl font-bold text-blue-500">{status.name}</h2>
-        <p className="text-zinc-300 text-sm">{status.description}</p>
+        <p className="text-zinc-800 dark:text-zinc-300 text-sm">
+          {status.description}
+        </p>
       </div>
       {status.image && (
         <Image

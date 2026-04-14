@@ -55,13 +55,13 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
           <h1 className="text-blue-500 text-3xl mb-10 font-bold text-center">
             {postData.title}
           </h1>
-          <div className="flex text-zinc-300 justify-between font-bold">
+          <div className="flex text-zinc-800 dark:text-zinc-300 justify-between font-bold">
             <span>By Tony</span>
             <span>{new Date(postData.date).toLocaleDateString()}</span>
           </div>
-          <hr className="h-1 bg-zinc-300 rounded-full" />
+          <hr className="h-1 bg-zinc-800 dark:bg-zinc-300 rounded-full" />
         </div>
-        <p className="text-zinc-300">{postData.content}</p>
+        <p className="text-zinc-800 dark:text-zinc-300">{postData.content}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-10 mt-10">
           {postIndex !== 0 && (
             <Btn
@@ -69,7 +69,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
               link={"/blog/" + posts[postIndex - 1].slug}
               left={true}
             >
-              <FaCaretLeft size={25} className="text-zinc-300" />
+              <FaCaretLeft size={25} />
             </Btn>
           )}
           {postIndex !== posts.length - 1 && (

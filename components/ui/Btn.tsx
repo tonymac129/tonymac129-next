@@ -12,7 +12,7 @@ type BtnProps = {
 };
 
 const btnStyles =
-  "bg-transparent font-bold px-4 py-2 border-2 text-zinc-300 border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 flex items-center gap-x-3 w-fit ";
+  "bg-transparent font-bold px-4 py-2 border-2 text-zinc-800 dark:text-zinc-300 border-zinc-500 dark:border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 flex items-center gap-x-3 w-fit ";
 
 function Btn({ text, onclick, link, primary, children, left }: BtnProps) {
   return link ? (
@@ -21,7 +21,7 @@ function Btn({ text, onclick, link, primary, children, left }: BtnProps) {
       className={
         btnStyles +
         (primary
-          ? "bg-white border-white! hover:bg-zinc-300 hover:border-zinc-300! text-zinc-800"
+          ? "bg-black! dark:bg-white! border-black! dark:border-white! hover:dark:bg-zinc-300 hover:border-zinc-800 hover:dark:border-zinc-300! text-zinc-300! dark:text-zinc-800!"
           : "")
       }
     >

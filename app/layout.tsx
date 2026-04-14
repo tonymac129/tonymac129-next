@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import Nav from "@/components/layout/Nav";
 import Animate from "@/components/layout/Animate";
 import Footer from "@/components/layout/Footer";
@@ -37,11 +38,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${inter.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
-        <Nav />
-        <Animate>{children}</Animate>
-        <Footer />
+        <ThemeProvider attribute="class">
+          <Nav />
+          <Animate>{children}</Animate>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

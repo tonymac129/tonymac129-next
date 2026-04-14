@@ -63,12 +63,12 @@ function Skills({ skillData }: { skillData: SkillType[] }) {
             setValue={setSearch}
           />
         </div>
-        <div className="text-zinc-300 flex items-center gap-x-3 lg:absolute left-0">
+        <div className="text-zinc-800 dark:text-zinc-300 flex items-center gap-x-3 lg:absolute left-0">
           Sort by{" "}
           <select
             value={sortMethod}
             onChange={(e) => setSortMethod(e.target.value)}
-            className="appearance-none py-2 w-30 rounded-lg bg-zinc-900 cursor-pointer font-bold text-center outline-none"
+            className="appearance-none py-2 w-30 rounded-lg bg-zinc-300 dark:bg-zinc-900 cursor-pointer font-bold text-center outline-none"
           >
             <option value="custom">Custom</option>
             <option value="mastery">Mastery</option>
@@ -94,7 +94,7 @@ function Skills({ skillData }: { skillData: SkillType[] }) {
             <Card key={skill.id} skill={skill} index={i} />
           ))
         ) : (
-          <div className="text-zinc-300">
+          <div className="text-zinc-800 dark:text-zinc-300">
             No skills found! Try clearing the filters or I just don&apos;t know
             that much...
           </div>

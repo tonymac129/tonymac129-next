@@ -32,13 +32,15 @@ function Post({ post, index }: PostProps) {
     >
       <Link
         href={"/blog/" + post.slug}
-        className="bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-6 py-3 gap-y-3 text-sm w-65 h-full"
+        className="bg-zinc-300 dark:bg-zinc-900 rounded-lg cursor-pointer flex flex-col px-6 py-3 gap-y-3 text-sm w-65 h-full"
       >
         <h2 className="text-blue-500 font-bold text-xl">{post.title}</h2>
-        <div className="font-bold text-zinc-300">
+        <div className="font-bold text-zinc-800 dark:text-zinc-300">
           {new Date(post.date).toLocaleDateString()}
         </div>
-        <p className="text-zinc-300">{post.content.slice(0, 60) + "..."}</p>
+        <p className="text-zinc-800 dark:text-zinc-300">
+          {post.content.slice(0, 60) + "..."}
+        </p>
       </Link>
     </motion.div>
   );
