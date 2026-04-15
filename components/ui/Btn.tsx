@@ -15,22 +15,18 @@ const btnStyles =
   "bg-transparent font-bold px-4 py-2 border-2 text-zinc-800 dark:text-zinc-300 border-zinc-500 dark:border-zinc-800 hover:border-zinc-700 rounded-lg cursor-pointer transition-colors duration-300 flex items-center gap-x-3 w-fit ";
 
 function Btn({ text, onclick, link, primary, children, left }: BtnProps) {
+  const primaryStyles = primary
+    ? "bg-black! dark:bg-white! border-black! dark:border-white! hover:dark:bg-zinc-300! hover:border-zinc-800! hover:dark:border-zinc-300! text-zinc-300! dark:text-zinc-800!"
+    : "";
+
   return link ? (
-    <Link
-      href={link}
-      className={
-        btnStyles +
-        (primary
-          ? "bg-black! dark:bg-white! border-black! dark:border-white! hover:dark:bg-zinc-300 hover:border-zinc-800 hover:dark:border-zinc-300! text-zinc-300! dark:text-zinc-800!"
-          : "")
-      }
-    >
+    <Link href={link} className={btnStyles + primaryStyles}>
       {(left && children) || ""}
       {text}
       {(!left && children) || ""}
     </Link>
   ) : (
-    <button className={btnStyles} onClick={onclick}>
+    <button className={btnStyles + primaryStyles} onClick={onclick}>
       {(left && children) || ""}
       {text}
       {(!left && children) || ""}

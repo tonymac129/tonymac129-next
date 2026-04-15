@@ -14,10 +14,10 @@ function Mode() {
       onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
       className="text-zinc-800 dark:text-zinc-300 cursor-pointer"
     >
-      {theme == "dark" ? (
-        <FaSun title="Toggle light mode" size={25} />
-      ) : (
+      {theme == "light" ? (
         <FaMoon title="Toggle dark mode" size={25} />
+      ) : (
+        <FaSun title="Toggle light mode" size={25} />
       )}
     </motion.div>
   );

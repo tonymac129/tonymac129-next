@@ -6,7 +6,9 @@ import { FaXmark } from "react-icons/fa6";
 type InputProps = {
   placeholder: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue:
+    | React.Dispatch<React.SetStateAction<string>>
+    | ((value: string) => void);
   width?: number;
   className?: string;
 };
@@ -40,7 +42,7 @@ function Input({ placeholder, value, setValue, width, className }: InputProps) {
           onClick={handleClear}
           className="absolute right-4 cursor-pointer"
           title="Clear"
-          size={25}
+          size={20}
         />
       )}
     </div>

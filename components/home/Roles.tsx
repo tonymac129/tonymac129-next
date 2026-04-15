@@ -49,7 +49,9 @@ function Roles() {
               cursor-pointer relative  ${selected === role.id ? "group-hover/container:bg-zinc-300 dark:group-hover/container:bg-zinc-800" : "bg-transparent hover:bg-zinc-300 dark:hover:bg-zinc-900"} transition-colors duration-300`}
           >
             {selected === role.id && (
-              <span
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 className="bg-zinc-300 dark:bg-zinc-900 -z-1 h-full absolute top-0 left-0 group-hover/container:bg-zinc-300 dark:group-hover/container:bg-zinc-800 transition-colors duration-300"
                 style={{ width: progress + "%" }}
               />
