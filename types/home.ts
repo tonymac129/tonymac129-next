@@ -13,3 +13,9 @@ export interface CommentType {
   date: Date;
   private?: boolean;
 }
+
+export interface ActionResponseType {
+  success: boolean;
+  message?: string;
+  error?: string;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import type { CommentType } from "@/types/home";
+import type { CommentType, ActionResponseType } from "@/types/home";
 import { SubmitEvent, useState } from "react";
 import Input from "../ui/Input";
 import Btn from "../ui/Btn";
@@ -8,16 +8,45 @@ import Btn from "../ui/Btn";
 const labelStyles =
   "flex flex-col gap-y-1 text-zinc-800 dark:text-zinc-300 w-fit text-sm";
 
-function CommentBox() {
+function CommentBox({
+  createComment,
+}: {
+  createComment: (comment: CommentType) => Promise<ActionResponseType>;
+}) {
   const [comment, setComment] = useState<CommentType>({
     id: crypto.randomUUID(),
     username: "",
     content: "",
     date: new Date(),
   });
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  function handleSubmit(e: SubmitEvent) {
+  async function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
+    setLoading(true);
+    if (
+      comment.username.trim().length > 0 &&
+      comment.content.trim().length > 0
+    ) {
+      const response = await createComment(comment);
+      if (response.error) {
+        setError(response.error);
+      } else {
+        setError(null);
+        setComment({
+          id: crypto.randomUUID(),
+          username: "",
+          content: "",
+          email: "",
+          date: new Date(),
+          private: false,
+        });
+      }
+    } else {
+      setError("Please fill out the username and the content fields!");
+    }
+    setLoading(false);
   }
 
   return (
@@ -55,7 +84,8 @@ function CommentBox() {
           onChange={(e) => setComment({ ...comment, content: e.target.value })}
         ></textarea>
       </label>
-      <Btn text="Submit" onclick={() => console.log("submit")} primary />
+      <Btn text={loading ? "Loading..." : "Submit"} submit primary />
+      {error && <div className="text-red-500 text-sm">{error}</div>}
     </form>
   );
 }

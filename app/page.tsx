@@ -1,4 +1,6 @@
-import type { CommentType, QuoteType } from "@/types/home";
+import type { QuoteType } from "@/types/home";
+import { createComment } from "./actions";
+import { prisma } from "@/lib/prisma";
 import Hero from "@/components/home/Hero";
 import CommentBox from "@/components/home/CommentBox";
 import Image from "next/image";
@@ -30,9 +32,9 @@ const quotes: QuoteType[] = [
   },
 ];
 
-const comments: CommentType[] = [];
+export default async function Home() {
+  const comments = await prisma.comment.findMany();
 
-export default function Home() {
   return (
     <div className="flex flex-col px-5 gap-y-10 sm:px-10 lg:px-40 mb-15">
       <Hero />
@@ -66,16 +68,18 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-1 gap-y-5">
+        <div className="flex flex-col flex-1 gap-y-10">
           <h1 className="text-blue-500 text-2xl font-bold">
             Leave your own message here!
           </h1>
-          <CommentBox />
-          <div>
+          <CommentBox createComment={createComment} />
+          <div className="flex flex-col gap-y-3">
             {comments.length > 0 ? (
-              comments.map((comment) => (
-                <Comment key={comment.id} comment={comment} />
-              ))
+              comments
+                .sort((a, b) => b.date.getTime() - a.date.getTime())
+                .map((comment) => (
+                  <Comment key={comment.id} comment={comment} />
+                ))
             ) : (
               <div className="text-zinc-800 dark:text-zinc-300 text-center">
                 No comments found! Looks like you&apos;re the first one here :)
