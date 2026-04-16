@@ -33,12 +33,12 @@ const quotes: QuoteType[] = [
 ];
 
 export default async function Home() {
-  const comments = await prisma.comment.findMany();
+  const comments = await prisma.comment.findMany({ where: { private: false } });
 
   return (
     <div className="flex flex-col px-5 gap-y-10 sm:px-10 lg:px-40 mb-15">
       <Hero />
-      <div className="flex gap-x-15">
+      <div className="max-w-350 mx-auto w-full flex flex-col lg:flex-row gap-10 xl:gap-15">
         <div className="flex-1 flex flex-col gap-y-10">
           <h1 className="text-blue-500 text-2xl font-bold">
             Here&apos;s what people say about me
@@ -68,12 +68,15 @@ export default async function Home() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-1 gap-y-10">
+        <div className="flex flex-col flex-1 gap-y-5">
           <h1 className="text-blue-500 text-2xl font-bold">
             Leave your own message here!
           </h1>
           <CommentBox createComment={createComment} />
           <div className="flex flex-col gap-y-3">
+            <h2 className="text-blue-500 text-lg font-bold">
+              Comment{comments.length == 1 ? "" : "s"} ({comments.length})
+            </h2>
             {comments.length > 0 ? (
               comments
                 .sort((a, b) => b.date.getTime() - a.date.getTime())

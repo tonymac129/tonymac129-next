@@ -2,6 +2,7 @@
 
 import type { CommentType, ActionResponseType } from "@/types/home";
 import { SubmitEvent, useState } from "react";
+import { FaCheck } from "react-icons/fa";
 import Input from "../ui/Input";
 import Btn from "../ui/Btn";
 
@@ -51,7 +52,7 @@ function CommentBox({
 
   return (
     <form className="flex flex-col gap-y-3" onSubmit={handleSubmit}>
-      <div className="flex justify-between">
+      <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-5 xl:justify-between">
         <label className={labelStyles}>
           Username
           <Input
@@ -83,6 +84,23 @@ function CommentBox({
           value={comment.content}
           onChange={(e) => setComment({ ...comment, content: e.target.value })}
         ></textarea>
+      </label>
+      <label className="flex items-center gap-x-2 w-fit text-zinc-800 dark:text-zinc-300 text-sm cursor-pointer">
+        <div className="flex justify-center items-center has-checked:bg-blue-500 border-2 rounded-lg border-blue-500 w-5 h-5 cursor-pointer transition-colors duration-300 relative">
+          <input
+            type="checkbox"
+            className="hidden"
+            checked={comment.private || false}
+            onChange={(e) =>
+              setComment({ ...comment, private: e.target.checked })
+            }
+          />
+          <FaCheck
+            size={15}
+            className={`text-white ${comment.private ? "opacity-100" : "opacity-0"} transition-opacity duration-300 absolute scale-105`}
+          />
+        </div>
+        Private (only visible to me)
       </label>
       <Btn text={loading ? "Loading..." : "Submit"} submit primary />
       {error && <div className="text-red-500 text-sm">{error}</div>}
