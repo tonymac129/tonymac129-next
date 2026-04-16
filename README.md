@@ -12,6 +12,18 @@
 
 My personal website with my projects, skill, blog, and about, now rewritten (for the fourth time) in Next.js, TypeScript, Tailwind, and Postgres! This rewrite has significantly improved performance, content, navigation, design, and SEO, and added multiple projects and additional content about me as well!
 
+## Features
+
+- Homepage: hero with interactive intro section and Discord status widget, fun testimonials, and comment section
+- Projects: my more complex, technical, and polished projects that best showcase my skills, experiences, and abilities
+- Misc: my less impressive, smaller projects used for learning, experimenting, or fun with sorting, filtering, and searching
+- Skills: my technical, programming, and general skills with description and progress with sorting, filtering, and searching
+- Blog: my very few blog posts about my skills or anything I feel like writing also with sorting, filtering, and searching
+- About: more detailed information and paragraphs about me, current status, contact info, and interactive about widget
+- Admin: admin page where I can manage the site's data and content directly (only I can access because of obvious reasons)
+- Complete with modern responsive design, dark/light mode support and smooth interactive animations throughout the site
+- Powerful search for all my projects, skills, and blog posts, as well as SEO to improve navigation and accessibility
+
 ## Tech stack
 
 This is a [Next.js](https://nextjs.org) app hosted on [Vercel](https://vercel.com) and [Neon](https://neon.com), built with [React](https://react.dev), [TypeScript](https://typescriptlang.org), [Prisma](https://www.prisma.io/), [PostgreSQL](https://www.postgresql.org/), and [Tailwind](https://tailwindcss.com), and the libraries [Better Auth](https://www.better-auth.com), [Framer Motion](https://motion.dev), and [React Icons](https://react-icons.github.io). The app folder contains the frontend page routes and the backend API endpoints. The components folder contains frontend layout and UI components. The prisma folder contains the Prisma schema, and the lib and types folders contain extra stuff for setup. Finally, the public folder contains frontend assets like icons and logos.
